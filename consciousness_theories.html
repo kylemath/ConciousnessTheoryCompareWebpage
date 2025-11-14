@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consciousness Theories: IIT & Microtubule Quantum Theory</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #667eea;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .subtitle {
+            font-size: 1.3em;
+            color: #666;
+            font-weight: 300;
+        }
+
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        nav a {
+            color: #667eea;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            transition: all 0.3s;
+            font-weight: 600;
+            background: rgba(102, 126, 234, 0.1);
+        }
+
+        nav a:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            margin-bottom: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            font-size: 2.5em;
+            color: #667eea;
+            margin-bottom: 25px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+        }
+
+        h3 {
+            font-size: 1.8em;
+            color: #764ba2;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            color: #444;
+        }
+
+        .demo-container {
+            width: 100%;
+            height: 500px;
+            border-radius: 15px;
+            margin: 30px 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: inset 0 5px 20px rgba(0,0,0,0.1);
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        }
+
+        .controls {
+            background: rgba(102, 126, 234, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .control-group {
+            margin: 15px 0;
+        }
+
+        label {
+            display: inline-block;
+            width: 200px;
+            font-weight: 600;
+            color: #667eea;
+        }
+
+        input[type="range"] {
+            width: 300px;
+            margin: 0 10px;
+        }
+
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin: 5px;
+        }
+
+        button:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .phi-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #667eea;
+            text-align: center;
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 10px;
+        }
+
+        .resources {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .resource-card {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s;
+        }
+
+        .resource-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .resource-card h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .resource-card a {
+            color: #764ba2;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .resource-card a:hover {
+            text-decoration: underline;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.2) 0%, rgba(255, 165, 0, 0.2) 100%);
+            border-left: 4px solid #ffa500;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            margin-top: 40px;
+            color: #666;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .formula {
+            font-family: 'Courier New', monospace;
+            background: rgba(102, 126, 234, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-size: 1.2em;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .demo-container {
+                height: 400px;
+            }
+
+            label {
+                display: block;
+                width: 100%;
+                margin-bottom: 5px;
+            }
+
+            input[type="range"] {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🧠 Consciousness Theories Explorer</h1>
+            <p class="subtitle">Interactive Visualizations of Integrated Information Theory & Quantum Microtubule Consciousness</p>
+        </header>
+
+        <nav>
+            <a href="#iit">Integrated Information Theory (IIT)</a>
+            <a href="#microtubule">Microtubule Quantum Theory</a>
+            <a href="#resources">Research & Articles</a>
+        </nav>
+
+        <!-- Integrated Information Theory Section -->
+        <section id="iit" class="section">
+            <h2>Integrated Information Theory (IIT)</h2>
+            
+            <p>
+                Integrated Information Theory, developed by neuroscientist <strong>Giulio Tononi</strong>, proposes that 
+                consciousness arises from the integration of information within a system. The theory is built on the premise 
+                that conscious experience is both <em>highly informative</em> and <em>highly integrated</em>.
+            </p>
+
+            <h3>Core Concepts</h3>
+            <p>
+                IIT introduces a mathematical framework to measure consciousness through a quantity called <strong>Φ (Phi)</strong>, 
+                which represents the amount of integrated information in a system. According to IIT:
+            </p>
+
+            <ul style="margin-left: 40px; margin-bottom: 20px;">
+                <li><strong>Higher Φ = More Consciousness:</strong> Systems with greater integrated information possess higher levels of consciousness</li>
+                <li><strong>Intrinsic Existence:</strong> Consciousness exists from the system's own perspective</li>
+                <li><strong>Structured Experience:</strong> Each experience has a specific structure determined by the system's cause-effect repertoire</li>
+                <li><strong>Integration:</strong> Consciousness cannot be reduced to independent components</li>
+                <li><strong>Exclusion:</strong> Each experience excludes alternatives and has definite borders</li>
+            </ul>
+
+            <div class="highlight-box">
+                <strong>💡 Key Insight:</strong> IIT suggests that consciousness is not limited to biological systems. 
+                Any system that generates sufficient integrated information could, in principle, possess some form of consciousness.
+            </div>
+
+            <div class="formula">
+                Φ = Integrated Information = f(cause-effect structure, irreducibility)
+            </div>
+
+            <h3>Interactive Neural Network Visualization</h3>
+            <p>
+                This visualization demonstrates how information flows through an interconnected network. The connections represent 
+                neural pathways, and the integration of information across the network contributes to the overall Φ value.
+            </p>
+
+            <div class="controls">
+                <div class="control-group">
+                    <label>Number of Nodes:</label>
+                    <input type="range" id="nodeCount" min="5" max="30" value="15" />
+                    <span id="nodeCountValue">15</span>
+                </div>
+                <div class="control-group">
+                    <label>Connection Density:</label>
+                    <input type="range" id="connectionDensity" min="0" max="100" value="30" />
+                    <span id="connectionDensityValue">30%</span>
+                </div>
+                <div class="control-group">
+                    <button onclick="updateIITNetwork()">Update Network</button>
+                    <button onclick="animateIntegration()">Animate Information Flow</button>
+                </div>
+            </div>
+
+            <div class="phi-value">
+                Φ (Phi) Approximation: <span id="phiValue">7.3</span>
+            </div>
+
+            <div id="iit-demo" class="demo-container"></div>
+
+            <h3>IIT 4.0 Updates</h3>
+            <p>
+                The latest version, IIT 4.0, emphasizes that consciousness is intrinsic and exists only for systems that 
+                maximize integrated information. This version provides more rigorous mathematical definitions and addresses 
+                previous criticisms about the theory's computational complexity.
+            </p>
+        </section>
+
+        <!-- Microtubule Section -->
+        <section id="microtubule" class="section">
+            <h2>Orchestrated Objective Reduction (Orch OR) - Microtubule Quantum Theory</h2>
+            
+            <p>
+                The <strong>Orchestrated Objective Reduction (Orch OR)</strong> theory, proposed by physicist 
+                <strong>Sir Roger Penrose</strong> and anesthesiologist <strong>Stuart Hameroff</strong>, suggests that 
+                consciousness arises from quantum computations occurring in brain microtubules.
+            </p>
+
+            <h3>The Quantum Consciousness Hypothesis</h3>
+            <p>
+                Microtubules are structural proteins found in the cytoskeleton of cells, including neurons. According to Orch OR:
+            </p>
+
+            <ul style="margin-left: 40px; margin-bottom: 20px;">
+                <li><strong>Quantum Superposition:</strong> Tubulin proteins within microtubules exist in quantum superposition states</li>
+                <li><strong>Objective Reduction:</strong> Consciousness emerges when quantum superpositions reach a threshold and collapse via objective reduction</li>
+                <li><strong>Orchestration:</strong> This process is orchestrated by cellular mechanisms and synaptic inputs</li>
+                <li><strong>Non-Computable:</strong> Consciousness involves non-algorithmic processes beyond classical computation</li>
+                <li><strong>Quantum Coherence:</strong> Microtubules maintain quantum coherence at biological temperatures</li>
+            </ul>
+
+            <div class="highlight-box">
+                <strong>🔬 Recent Evidence:</strong> Recent studies have found experimental support for quantum processes in microtubules, 
+                including evidence of quantum vibrations and coherence at physiological temperatures, lending credibility to the Orch OR theory.
+            </div>
+
+            <h3>Microtubule Structure</h3>
+            <p>
+                Microtubules are hollow cylinders approximately 25 nanometers in diameter, composed of 13 protofilaments arranged 
+                in a helical pattern. Each protofilament consists of tubulin dimers (α-tubulin and β-tubulin) that can exist 
+                in multiple conformational states.
+            </p>
+
+            <div class="controls">
+                <div class="control-group">
+                    <label>Quantum Activity:</label>
+                    <input type="range" id="quantumActivity" min="0" max="100" value="50" />
+                    <span id="quantumActivityValue">50%</span>
+                </div>
+                <div class="control-group">
+                    <label>Rotation Speed:</label>
+                    <input type="range" id="rotationSpeed" min="0" max="100" value="30" />
+                    <span id="rotationSpeedValue">30%</span>
+                </div>
+                <div class="control-group">
+                    <button onclick="toggleQuantumState()">Toggle Quantum Superposition</button>
+                    <button onclick="triggerObjectiveReduction()">Trigger Objective Reduction</button>
+                </div>
+            </div>
+
+            <div id="microtubule-demo" class="demo-container"></div>
+
+            <h3>Connection to Anesthesia</h3>
+            <p>
+                An intriguing aspect of Orch OR is its explanation for how anesthetics work. The theory proposes that 
+                anesthetic molecules bind to microtubules and inhibit quantum processes, thereby eliminating consciousness. 
+                This provides a testable prediction and has been partially supported by experimental findings.
+            </p>
+
+            <div class="formula">
+                T = ℏ / (EG) ≈ 25 milliseconds (time for objective reduction)
+            </div>
+            <p style="text-align: center; font-size: 0.9em; color: #666;">
+                Where T is the time to objective reduction, ℏ is Planck's constant, and EG is gravitational self-energy
+            </p>
+        </section>
+
+        <!-- Resources Section -->
+        <section id="resources" class="section">
+            <h2>Research Articles & Resources</h2>
+
+            <h3>Integrated Information Theory (IIT)</h3>
+            <div class="resources">
+                <div class="resource-card">
+                    <h4>📚 Wikipedia: IIT</h4>
+                    <p>Comprehensive overview of Integrated Information Theory</p>
+                    <a href="https://en.wikipedia.org/wiki/Integrated_information_theory" target="_blank">
+                        en.wikipedia.org/wiki/Integrated_information_theory
+                    </a>
+                </div>
+
+                <div class="resource-card">
+                    <h4>📖 Internet Encyclopedia of Philosophy</h4>
+                    <p>Detailed philosophical analysis of IIT and its implications</p>
+                    <a href="https://iep.utm.edu/integrated-information-theory-of-consciousness/" target="_blank">
+                        iep.utm.edu/integrated-information-theory-of-consciousness
+                    </a>
+                </div>
+
+                <div class="resource-card">
+                    <h4>🔬 Nature: Consciousness Research</h4>
+                    <p>Scientific papers on consciousness and information integration</p>
+                    <a href="https://www.nature.com/subjects/consciousness" target="_blank">
+                        nature.com/subjects/consciousness
+                    </a>
+                </div>
+
+                <div class="resource-card">
+                    <h4>🧪 Tononi Lab - University of Wisconsin</h4>
+                    <p>Home of Giulio Tononi's consciousness research</p>
+                    <a href="https://www.psychiatry.wisc.edu/tononi-lab/" target="_blank">
+                        psychiatry.wisc.edu/tononi-lab
+                    </a>
+                </div>
+            </div>
+
+            <h3>Microtubule & Quantum Consciousness</h3>
+            <div class="resources">
+                <div class="resource-card">
+                    <h4>📚 Wikipedia: Orch OR Theory</h4>
+                    <p>Overview of Orchestrated Objective Reduction theory</p>
+                    <a href="https://en.wikipedia.org/wiki/Orchestrated_objective_reduction" target="_blank">
+                        en.wikipedia.org/wiki/Orchestrated_objective_reduction
+                    </a>
+                </div>
+
+                <div class="resource-card">
+                    <h4>🔬 Neuroscience News: Quantum Consciousness</h4>
+                    <p>Study supports quantum basis of consciousness in the brain</p>
+                    <a href="https://neurosciencenews.com/quantum-process-consciousness-27624/" target="_blank">
+                        neurosciencenews.com/quantum-process-consciousness-27624
+                    </a>
+                </div>
+
+                <div class="resource-card">
+                    <h4>📄 PubMed: Microtubule Research</h4>
+                    <p>Scientific studies on microtubules and consciousness</p>
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/40342554/" target="_blank">
+                        pubmed.ncbi.nlm.nih.gov/40342554
+                    </a>
+                </div>
+
+                <div class="resource-card">
+                    <h4>🧠 The Penrose Institute</h4>
+                    <p>Research on quantum mechanics and consciousness</p>
+                    <a href="https://www.quantumconsciousness.org/" target="_blank">
+                        quantumconsciousness.org
+                    </a>
+                </div>
+
+                <div class="resource-card">
+                    <h4>🎓 Stuart Hameroff's Research</h4>
+                    <p>Center for Consciousness Studies, University of Arizona</p>
+                    <a href="https://consciousness.arizona.edu/" target="_blank">
+                        consciousness.arizona.edu
+                    </a>
+                </div>
+
+                <div class="resource-card">
+                    <h4>📊 Physics of Life Reviews</h4>
+                    <p>Peer-reviewed papers on quantum biology and consciousness</p>
+                    <a href="https://www.sciencedirect.com/journal/physics-of-life-reviews" target="_blank">
+                        sciencedirect.com/journal/physics-of-life-reviews
+                    </a>
+                </div>
+            </div>
+
+            <h3>General Consciousness Science</h3>
+            <div class="resources">
+                <div class="resource-card">
+                    <h4>🌐 Association for the Scientific Study of Consciousness</h4>
+                    <p>International organization for consciousness research</p>
+                    <a href="https://www.theassc.org/" target="_blank">
+                        theassc.org
+                    </a>
+                </div>
+
+                <div class="resource-card">
+                    <h4>📰 Science Daily: Consciousness News</h4>
+                    <p>Latest news and research updates on consciousness</p>
+                    <a href="https://www.sciencedaily.com/news/mind_brain/consciousness/" target="_blank">
+                        sciencedaily.com/news/mind_brain/consciousness
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p><strong>Consciousness Theories Explorer</strong></p>
+            <p>An interactive educational resource exploring the scientific theories of consciousness</p>
+            <p style="margin-top: 15px; font-size: 0.9em;">
+                Created with Three.js | Data sourced from peer-reviewed research and scientific publications
+            </p>
+            <p style="margin-top: 10px; font-size: 0.85em; color: #999;">
+                Last Updated: November 2025
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // ============================================
+        // INTEGRATED INFORMATION THEORY VISUALIZATION
+        // ============================================
+        
+        let iitScene, iitCamera, iitRenderer, iitNodes = [], iitConnections = [];
+        let iitAnimationId;
+
+        function initIIT() {
+            const container = document.getElementById('iit-demo');
+            const width = container.clientWidth;
+            const height = container.clientHeight;
+
+            // Scene setup
+            iitScene = new THREE.Scene();
+            iitCamera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+            iitRenderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+            iitRenderer.setSize(width, height);
+            iitRenderer.setClearColor(0x1e3c72, 1);
+            container.appendChild(iitRenderer.domElement);
+
+            iitCamera.position.z = 30;
+
+            // Lighting
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+            iitScene.add(ambientLight);
+
+            const pointLight = new THREE.PointLight(0x667eea, 1, 100);
+            pointLight.position.set(10, 10, 10);
+            iitScene.add(pointLight);
+
+            createIITNetwork();
+            animateIIT();
+        }
+
+        function createIITNetwork() {
+            // Clear existing network
+            iitNodes.forEach(node => iitScene.remove(node));
+            iitConnections.forEach(conn => iitScene.remove(conn));
+            iitNodes = [];
+            iitConnections = [];
+
+            const nodeCount = parseInt(document.getElementById('nodeCount').value);
+            const connectionDensity = parseInt(document.getElementById('connectionDensity').value) / 100;
+
+            // Create nodes
+            const geometry = new THREE.SphereGeometry(0.5, 32, 32);
+            const material = new THREE.MeshPhongMaterial({ 
+                color: 0x667eea,
+                emissive: 0x667eea,
+                emissiveIntensity: 0.5
+            });
+
+            for (let i = 0; i < nodeCount; i++) {
+                const node = new THREE.Mesh(geometry, material.clone());
+                
+                // Arrange in a sphere
+                const phi = Math.acos(-1 + (2 * i) / nodeCount);
+                const theta = Math.sqrt(nodeCount * Math.PI) * phi;
+                
+                node.position.x = 15 * Math.cos(theta) * Math.sin(phi);
+                node.position.y = 15 * Math.sin(theta) * Math.sin(phi);
+                node.position.z = 15 * Math.cos(phi);
+                
+                node.userData.originalPosition = node.position.clone();
+                node.userData.phase = Math.random() * Math.PI * 2;
+                
+                iitScene.add(node);
+                iitNodes.push(node);
+            }
+
+            // Create connections
+            const lineMaterial = new THREE.LineBasicMaterial({ 
+                color: 0x8899ff,
+                transparent: true,
+                opacity: 0.3
+            });
+
+            for (let i = 0; i < nodeCount; i++) {
+                for (let j = i + 1; j < nodeCount; j++) {
+                    if (Math.random() < connectionDensity) {
+                        const points = [
+                            iitNodes[i].position,
+                            iitNodes[j].position
+                        ];
+                        const geometry = new THREE.BufferGeometry().setFromPoints(points);
+                        const line = new THREE.Line(geometry, lineMaterial.clone());
+                        line.userData.startNode = i;
+                        line.userData.endNode = j;
+                        iitScene.add(line);
+                        iitConnections.push(line);
+                    }
+                }
+            }
+
+            // Calculate approximate Phi
+            const avgConnections = iitConnections.length / nodeCount;
+            const phi = (avgConnections * nodeCount * connectionDensity * 2).toFixed(1);
+            document.getElementById('phiValue').textContent = phi;
+        }
+
+        function animateIIT() {
+            iitAnimationId = requestAnimationFrame(animateIIT);
+
+            const time = Date.now() * 0.001;
+
+            // Animate nodes
+            iitNodes.forEach((node, index) => {
+                node.position.x = node.userData.originalPosition.x + Math.sin(time + node.userData.phase) * 0.5;
+                node.position.y = node.userData.originalPosition.y + Math.cos(time + node.userData.phase) * 0.5;
+                
+                // Pulse effect
+                const scale = 1 + Math.sin(time * 2 + node.userData.phase) * 0.2;
+                node.scale.set(scale, scale, scale);
+            });
+
+            // Update connections
+            iitConnections.forEach(conn => {
+                const points = [
+                    iitNodes[conn.userData.startNode].position,
+                    iitNodes[conn.userData.endNode].position
+                ];
+                conn.geometry.setFromPoints(points);
+            });
+
+            // Rotate camera
+            iitCamera.position.x = Math.sin(time * 0.1) * 30;
+            iitCamera.position.z = Math.cos(time * 0.1) * 30;
+            iitCamera.lookAt(0, 0, 0);
+
+            iitRenderer.render(iitScene, iitCamera);
+        }
+
+        function updateIITNetwork() {
+            createIITNetwork();
+        }
+
+        function animateIntegration() {
+            let startTime = Date.now();
+            const duration = 3000; // 3 seconds
+
+            function flash() {
+                const elapsed = Date.now() - startTime;
+                if (elapsed > duration) return;
+
+                const progress = elapsed / duration;
+                
+                iitNodes.forEach((node, index) => {
+                    const delay = (index / iitNodes.length) * 2000;
+                    if (elapsed > delay) {
+                        const intensity = Math.sin((elapsed - delay) * 0.01) * 0.5 + 0.5;
+                        node.material.emissiveIntensity = intensity * 2;
+                    }
+                });
+
+                iitConnections.forEach((conn, index) => {
+                    const delay = (index / iitConnections.length) * 2000;
+                    if (elapsed > delay) {
+                        const opacity = Math.sin((elapsed - delay) * 0.01) * 0.3 + 0.5;
+                        conn.material.opacity = opacity;
+                    }
+                });
+
+                requestAnimationFrame(flash);
+            }
+            flash();
+        }
+
+        // ============================================
+        // MICROTUBULE QUANTUM VISUALIZATION
+        // ============================================
+        
+        let mtScene, mtCamera, mtRenderer, microtubule, tubulinUnits = [];
+        let quantumParticles = [];
+        let mtAnimationId;
+
+        function initMicrotubule() {
+            const container = document.getElementById('microtubule-demo');
+            const width = container.clientWidth;
+            const height = container.clientHeight;
+
+            // Scene setup
+            mtScene = new THREE.Scene();
+            mtCamera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+            mtRenderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+            mtRenderer.setSize(width, height);
+            mtRenderer.setClearColor(0x1e3c72, 1);
+            container.appendChild(mtRenderer.domElement);
+
+            mtCamera.position.z = 20;
+            mtCamera.position.y = 5;
+
+            // Lighting
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+            mtScene.add(ambientLight);
+
+            const pointLight = new THREE.PointLight(0x764ba2, 1, 100);
+            pointLight.position.set(0, 10, 10);
+            mtScene.add(pointLight);
+
+            createMicrotubule();
+            createQuantumField();
+            animateMicrotubule();
+        }
+
+        function createMicrotubule() {
+            // Create microtubule structure
+            microtubule = new THREE.Group();
+
+            const protofilaments = 13;
+            const segmentCount = 20;
+            const radius = 3;
+
+            for (let i = 0; i < protofilaments; i++) {
+                const angle = (i / protofilaments) * Math.PI * 2;
+                
+                for (let j = 0; j < segmentCount; j++) {
+                    const geometry = new THREE.BoxGeometry(0.4, 0.8, 0.4);
+                    const material = new THREE.MeshPhongMaterial({ 
+                        color: 0x764ba2,
+                        emissive: 0x764ba2,
+                        emissiveIntensity: 0.3
+                    });
+                    
+                    const tubulin = new THREE.Mesh(geometry, material);
+                    
+                    const helixAngle = angle + (j * 0.1);
+                    tubulin.position.x = Math.cos(helixAngle) * radius;
+                    tubulin.position.z = Math.sin(helixAngle) * radius;
+                    tubulin.position.y = j * 0.9 - segmentCount * 0.45;
+                    
+                    tubulin.lookAt(0, tubulin.position.y, 0);
+                    
+                    tubulin.userData.protofilament = i;
+                    tubulin.userData.segment = j;
+                    tubulin.userData.quantumState = Math.random() > 0.5 ? 1 : 0;
+                    
+                    microtubule.add(tubulin);
+                    tubulinUnits.push(tubulin);
+                }
+            }
+
+            mtScene.add(microtubule);
+        }
+
+        function createQuantumField() {
+            const particleCount = 500;
+            const geometry = new THREE.BufferGeometry();
+            const positions = new Float32Array(particleCount * 3);
+            const colors = new Float32Array(particleCount * 3);
+
+            for (let i = 0; i < particleCount * 3; i += 3) {
+                positions[i] = (Math.random() - 0.5) * 20;
+                positions[i + 1] = (Math.random() - 0.5) * 20;
+                positions[i + 2] = (Math.random() - 0.5) * 20;
+
+                colors[i] = Math.random();
+                colors[i + 1] = Math.random() * 0.5 + 0.5;
+                colors[i + 2] = 1;
+            }
+
+            geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+            geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+            const material = new THREE.PointsMaterial({
+                size: 0.1,
+                vertexColors: true,
+                transparent: true,
+                opacity: 0.6,
+                blending: THREE.AdditiveBlending
+            });
+
+            const particles = new THREE.Points(geometry, material);
+            mtScene.add(particles);
+            quantumParticles.push(particles);
+        }
+
+        function animateMicrotubule() {
+            mtAnimationId = requestAnimationFrame(animateMicrotubule);
+
+            const time = Date.now() * 0.001;
+            const rotationSpeed = parseInt(document.getElementById('rotationSpeed').value) / 100;
+            const quantumActivity = parseInt(document.getElementById('quantumActivity').value) / 100;
+
+            // Rotate microtubule
+            microtubule.rotation.y = time * rotationSpeed;
+
+            // Animate quantum states
+            tubulinUnits.forEach((unit, index) => {
+                if (Math.random() < 0.01 * quantumActivity) {
+                    unit.userData.quantumState = 1 - unit.userData.quantumState;
+                }
+
+                const targetIntensity = unit.userData.quantumState * quantumActivity * 2;
+                unit.material.emissiveIntensity += (targetIntensity - unit.material.emissiveIntensity) * 0.1;
+
+                // Slight pulsing
+                const scale = 1 + Math.sin(time * 3 + index * 0.1) * 0.1 * quantumActivity;
+                unit.scale.set(scale, scale, scale);
+            });
+
+            // Animate quantum field
+            quantumParticles.forEach(particles => {
+                const positions = particles.geometry.attributes.position.array;
+                
+                for (let i = 0; i < positions.length; i += 3) {
+                    positions[i] += Math.sin(time + i) * 0.01 * quantumActivity;
+                    positions[i + 1] += Math.cos(time + i) * 0.01 * quantumActivity;
+                    positions[i + 2] += Math.sin(time * 0.5 + i) * 0.01 * quantumActivity;
+                }
+                
+                particles.geometry.attributes.position.needsUpdate = true;
+                particles.rotation.y = time * 0.1;
+            });
+
+            mtRenderer.render(mtScene, mtCamera);
+        }
+
+        function toggleQuantumState() {
+            tubulinUnits.forEach(unit => {
+                unit.userData.quantumState = Math.random() > 0.5 ? 1 : 0;
+            });
+        }
+
+        function triggerObjectiveReduction() {
+            let startTime = Date.now();
+            const duration = 2000;
+
+            function reduction() {
+                const elapsed = Date.now() - startTime;
+                if (elapsed > duration) {
+                    tubulinUnits.forEach(unit => {
+                        unit.userData.quantumState = Math.random() > 0.5 ? 1 : 0;
+                    });
+                    return;
+                }
+
+                const progress = elapsed / duration;
+                
+                tubulinUnits.forEach((unit, index) => {
+                    unit.material.emissiveIntensity = 3 * (1 - progress);
+                    
+                    if (progress > 0.8) {
+                        unit.userData.quantumState = Math.random() > 0.5 ? 1 : 0;
+                    }
+                });
+
+                requestAnimationFrame(reduction);
+            }
+            reduction();
+        }
+
+        // ============================================
+        // UI CONTROLS
+        // ============================================
+        
+        document.getElementById('nodeCount').addEventListener('input', function(e) {
+            document.getElementById('nodeCountValue').textContent = e.target.value;
+        });
+
+        document.getElementById('connectionDensity').addEventListener('input', function(e) {
+            document.getElementById('connectionDensityValue').textContent = e.target.value + '%';
+        });
+
+        document.getElementById('quantumActivity').addEventListener('input', function(e) {
+            document.getElementById('quantumActivityValue').textContent = e.target.value + '%';
+        });
+
+        document.getElementById('rotationSpeed').addEventListener('input', function(e) {
+            document.getElementById('rotationSpeedValue').textContent = e.target.value + '%';
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            if (iitRenderer && iitCamera) {
+                const iitContainer = document.getElementById('iit-demo');
+                iitCamera.aspect = iitContainer.clientWidth / iitContainer.clientHeight;
+                iitCamera.updateProjectionMatrix();
+                iitRenderer.setSize(iitContainer.clientWidth, iitContainer.clientHeight);
+            }
+
+            if (mtRenderer && mtCamera) {
+                const mtContainer = document.getElementById('microtubule-demo');
+                mtCamera.aspect = mtContainer.clientWidth / mtContainer.clientHeight;
+                mtCamera.updateProjectionMatrix();
+                mtRenderer.setSize(mtContainer.clientWidth, mtContainer.clientHeight);
+            }
+        });
+
+        // Initialize both visualizations when page loads
+        window.addEventListener('load', function() {
+            initIIT();
+            initMicrotubule();
+        });
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+    </script>
+</body>
+</html>
+
